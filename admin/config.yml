@@ -1,0 +1,18 @@
+#local_backend: true
+backend:
+  name: github
+  repo: LUBEN09/mi-portafolio
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "about"
+    label: "Sobre Mí"
+    folder: "content/about"
+    create: false
+    slug: "index"                  # fuerza que el archivo se llame index.md
+    fields:
+      - {label: "Título", name: "title", widget: "string", required: false}
+      - {label: "Contenido", name: "body", widget: "markdown"}

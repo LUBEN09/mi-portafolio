@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+
+    <!-- Tailwind CSS via CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Google Analytics -->
+        <!-- Añade tu Measurement ID aquí (ej. G-XXXXXXXXXX) -->
+        <meta name="ga-measurement-id" content="G-WSVM9QGBZL">
+        <script>
+            (function() {
+                // Lee el Measurement ID desde el meta tag
+                var meta = document.querySelector('meta[name="ga-measurement-id"]');
+                var measurementId = meta && meta.getAttribute('content') || '';
+
+                // Validación básica del formato (G- seguido de letras/números)
+                if (!/^G-[A-Z0-9]+$/i.test(measurementId)) {
+                    console.warn('Google Analytics no está configurado: faltó un Measurement ID válido en <meta name="ga-measurement-id">');
+                    return;
+                }
+
+                // Inyecta el script de gtag
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+                document.head.appendChild(s);
+
+                // Configura gtag cuando el script esté listo
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                window.gtag = gtag;
+                gtag('js', new Date());
+                // Activar anonymize_ip por privacidad
+                gtag('config', measurementId, { 'anonymize_ip': true });
+            })();
+        </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Hero -->
+    <header class="bg-blue-600 text-white py-20 text-center">
+        <h1 class="text-4xl font-bold">¡Hola! Soy [Guerben]</h1>
+        <p class="mt-4 text-xl">Desarrollador apasionado por crear cosas increíbles.</p>
+    </header>
+
+    <!-- Sobre mí -->
+    <section id="about" class="py-15 px-6 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Sobre mí</h2>
+        <div id="about-content" class="Prose lg:Prose-xl mx-auto">
+            <p>Soy un desarrollador con experiencia en [tecnologías]. Me encanta aprender nuevas habilidades y trabajar en proyectos desafiantes.</p>
+        </div>
+    </section>
+
+    <!-- Proyectos de GitHub -->
+    <section id="projects" class="py-16 bg-white">
+        <h2 class="text-3xl font-bold text-center mb-8">Mis Proyectos en GitHub</h2>
+    <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 max-w-6xl mx-auto">
+        <p>Cargando proyectos...</p>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <p>© 2025  Guerben.</p>
+        <p class="mt-2">
+            <a href="/admin" class="underline hover:text-blue-300">Editar contenido (admin)</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
