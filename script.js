@@ -93,12 +93,12 @@ async function loadGitHubRepos() {
     container.innerHTML = repos
       .filter(repo => !repo.fork) // excluye forks
       .map(repo => `
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border">
-          <h3 class="text-xl font-bold text-blue-600">${repo.name}</h3>
-          <p class="mt-2 text-gray-700">${repo.description || "Sin descripción"}</p>
-          <div class="mt-4 flex justify-between text-sm text-gray-500">
+        <div class="project-card">
+          <h3>${repo.name}</h3>
+          <p>${repo.description || "Sin descripción"}</p>
+          <div class="meta">
             <span>⭐ ${repo.stargazers_count || 0}</span>
-            <a href="${repo.html_url}" target="_blank" class="text-blue-500 hover:underline">Ver en GitHub</a>
+            <a href="${repo.html_url}" target="_blank">Ver en GitHub</a>
           </div>
         </div>
       `)

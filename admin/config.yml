@@ -1,7 +1,6 @@
 #local_backend: true
 backend:
-  name: github
-  repo: LUBEN09/mi-portafolio
+  name: git-gateway
   branch: main
 
 media_folder: "static/images"

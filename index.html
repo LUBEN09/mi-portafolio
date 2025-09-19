@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
 
-    <!-- Tailwind CSS via CDN-->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
         <!-- Google Analytics -->
         <!-- Añade tu Measurement ID aquí (ej. G-XXXXXXXXXX) -->
         <meta name="ga-measurement-id" content="G-WSVM9QGBZL">
@@ -41,32 +41,34 @@
 
 <body class="bg-gray-50 text-gray-800">
     <!-- Hero -->
-    <header class="bg-blue-600 text-white py-20 text-center">
-        <h1 class="text-4xl font-bold">¡Hola! Soy [Guerben]</h1>
-        <p class="mt-4 text-xl">Desarrollador apasionado por crear cosas increíbles.</p>
+    <header class="hero">
+        <div class="container">
+          <h1>¡Hola! Soy [Guerben]</h1>
+          <p>Desarrollador apasionado por crear cosas increíbles.</p>
+        </div>
     </header>
 
     <!-- Sobre mí -->
-    <section id="about" class="py-15 px-6 max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">Sobre mí</h2>
-        <div id="about-content" class="Prose lg:Prose-xl mx-auto">
+    <section id="about" class="container">
+        <h2 class="section-title">Sobre mí</h2>
+        <div id="about-content">
             <p>Soy un desarrollador con experiencia en [tecnologías]. Me encanta aprender nuevas habilidades y trabajar en proyectos desafiantes.</p>
         </div>
     </section>
 
     <!-- Proyectos de GitHub -->
-    <section id="projects" class="py-16 bg-white">
-        <h2 class="text-3xl font-bold text-center mb-8">Mis Proyectos en GitHub</h2>
-    <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 max-w-6xl mx-auto">
-        <p>Cargando proyectos...</p>
-    </div>
+    <section id="projects" class="container">
+        <h2 class="section-title">Mis Proyectos en GitHub</h2>
+        <div id="projects-list">
+            <p>Cargando proyectos...</p>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center">
+    <footer>
         <p>© 2025  Guerben.</p>
         <p class="mt-2">
-            <a href="/admin" class="underline hover:text-blue-300">Editar contenido (admin)</a>
+           
         </p>
     </footer>
 

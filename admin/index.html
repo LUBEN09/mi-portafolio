@@ -1,12 +1,47 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel de Administración</title>
-</head>
-<body>
-  <!-- Carga Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin - Netlify CMS</title>
+  </head>
+  <body>
+    <main style="max-width:900px;margin:2rem auto;padding:1rem;">
+      <h1>Admin PENDIENTE</h1>
+    </main>
+
+    <script>
+      async function loadContent() {
+        document.getElementById('status').textContent = 'Cargando...';
+        try {
+          const res = await fetch('/api/about', { credentials: 'include' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const json = await res.json();
+          document.getElementById('mdEditor').value = json.content || '';
+          document.getElementById('status').textContent = 'Cargado.';
+        } catch (err) {
+          document.getElementById('status').textContent = 'Error al cargar: ' + err.message + '. Asegúrate de arrancar server.js y usar credenciales.';
+        }
+      }
+
+      async function saveContent() {
+        document.getElementById('status').textContent = 'Guardando...';
+        const content = document.getElementById('mdEditor').value;
+        try {
+          const res = await fetch('/api/about', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content }),
+          });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          document.getElementById('status').textContent = 'Guardado correctamente.';
+        } catch (err) {
+          document.getElementById('status').textContent = 'Error al guardar: ' + err.message + '. Ver consola.';
+        }
+      }
+
+      document.getElementById('loadBtn').addEventListener('click', loadContent);
+      document.getElementById('saveBtn').addEventListener('click', saveContent);
+    </script>
+  </body>
 </html>
